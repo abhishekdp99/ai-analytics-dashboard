@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Analytics Dashboard
 
-## Getting Started
+An **AI Platform Monitoring & Analytics Dashboard** built with **Next.js** and **React**.  
+This project simulates a real-world control panel used by AI companies to monitor **model usage, token consumption, costs, errors, and client activity**.
 
-First, run the development server:
+It represents the type of dashboard used internally by AI SaaS companies like OpenAI, Anthropic, or cloud-based AI providers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 What this dashboard does
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This dashboard helps teams:
+- Track **API requests** and **token usage**
+- Monitor **AI model performance**
+- Analyze **costs and errors**
+- View **system health and usage trends**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+It is designed for:
+- Product managers  
+- Engineers  
+- Finance teams  
+- Support teams  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📊 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Cards** — API Requests, Tokens Used, AI Cost, Error Rate  
+- **Usage Charts** — Weekly AI activity and trends  
+- **Model Performance Table** — GPT-4, GPT-3.5, Embeddings, Vision models  
+- **Modern Dark UI** — Professional AI SaaS look  
+- **Fully Responsive** — Works on desktop and tablets  
+- **Modular SCSS Architecture** — Variables, mixins, and component-level styles  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework:** Next.js (App Router)  
+- **Library:** React.js  
+- **Styling:** SCSS (Sass)  
+- **Charts:** Recharts  
+- **Icons:** Flaticon  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📦 Installation & Setup
+
+To run this project locally:
+1. **Clone the repository:**
+   ```bash```
+   git clone [https://github.com/abhishekdp99/ai-analytics-dashboard.git](https://github.com/abhishekdp99/ai-analytics-dashboard.git)
+
+2. **Navigate into the directory:**
+   ```bash```
+  cd ai-analytics-dashboard
+
+3. **Install dependencies:**
+  ```bash```
+   npm install
+
+4. **Run the development server:**
+    ```bash```
+   npm run dev
+
+5. **Open in browser:** 
+   Open http://localhost:3000 in your browser to see the result.
+
+👤 Author
+Abhishek - abhishekdp99
+
+Built with ❤️ as a modern AI SaaS dashboard project by Abhishek
+   
