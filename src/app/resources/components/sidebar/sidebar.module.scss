@@ -1,0 +1,203 @@
+@use '../../styles/_mixin.scss' as *;
+
+.ai_sidebar_overlay {
+    display: none;
+
+    @include tab {
+        &.show {
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 4;
+        }
+    }
+}
+
+.ai_sidebar {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: color(ai_black);
+    transition: transform 0.3s ease-in-out;
+
+    @include tab {
+        transform: translateX(-100%);
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    &_wrapper {
+        position: relative;
+        width: 260px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgba($color: color(ai_gray), $alpha: .2);
+
+        @include xs {
+            width: 240px;
+        }
+
+        .ai_sidebar_head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            height: 75px;
+            border-bottom: 1px solid rgba($color: color(ai_gray), $alpha: .2);
+            margin-bottom: .75rem;
+
+            .ai_logo {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+
+                svg {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    fill: color(ai_brand_primary);
+                }
+
+                .ai_title {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    color: color(ai_brand_primary);
+                }
+            }
+
+            .ai_cross_icon {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(color(ai_brand_primary), 0.1);
+                height: 2rem;
+                width: 2rem;
+                border-radius: 8px;
+                cursor: pointer;
+
+                @include tab {
+                    display: flex;
+                }
+
+                svg {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    fill: color(ai_white);
+                }
+            }
+        }
+
+        .ai_sidebar_body {
+            flex: 1;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(color(ai_gray), 0.2);
+                border-radius: 10px;
+            }
+
+            .ai_nav_section {
+                padding: .5rem 1rem;
+
+                .ai_nav_title {
+                    font-size: .7rem;
+                    font-weight: 600;
+                    color: rgba($color: color(ai_gray), $alpha: .5);
+                    text-transform: uppercase;
+                    margin-bottom: .5rem;
+                }
+
+                .ai_sidebar_nav {
+                    display: flex;
+                    flex-direction: column;
+
+                    .ai_sidebar_nav_link {
+                        position: relative;
+                       margin: .25rem 0;
+                        padding: .5rem 1rem;
+                        border-radius: 0.5rem;
+                        transition: all 0.2s ease;
+
+                        .ai_content {
+                            display: flex;
+                            align-items: center;
+                            gap: .75rem;
+
+                            .ai_icon svg {
+                                width: 1.1rem;
+                                height: 1.1rem;
+                                fill: rgba($color: color(ai_white_off), $alpha: .6);
+                            }
+
+                            .ai_text {
+                                font-size: .9rem;
+                                color: rgba($color: color(ai_white_off), $alpha: .6);
+                            }
+                        }
+
+                        &.active,
+                        &:hover {
+                            background-color: rgba($color: color(ai_brand_primary), $alpha: 0.15);
+
+                            .ai_icon svg {
+                                fill: color(ai_brand_primary);
+                            }
+
+                            .ai_text {
+                                color: color(ai_white);
+                            }
+                        }
+
+                        &.active::after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 20%;
+                            bottom: 20%;
+                            width: 3px;
+                            background: color(ai_brand_primary);
+                            border-radius: 0 4px 4px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ai_sidebar_footer {
+            padding: 1rem;
+            border-top: 1px solid rgba($color: color(ai_gray), $alpha: .2);
+
+            .ai_logout {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                width: 100%;
+                padding: .75rem 1rem;
+                border-radius: .5rem;
+                color: color(error);
+                font-weight: 500;
+
+                svg {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    fill: color(error);
+                }
+
+                &:hover {
+                    background: rgba(color(error), 0.1);
+                }
+            }
+        }
+    }
+}

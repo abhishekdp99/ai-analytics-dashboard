@@ -1,0 +1,27 @@
+@use '../resources/styles/_mixin.scss' as *;
+
+.ai_dashboard {
+    width: 100%;
+    min-height: 100vh;
+    background-color: color(ai_black);
+
+    .ai_cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        
+        @include tab {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include xs {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+    }
+}

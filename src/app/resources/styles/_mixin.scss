@@ -1,0 +1,111 @@
+// sass:map
+@use "sass:map";
+
+$colors: (
+    ai_brand_primary: #6D5DFC,
+    ai_brand_primary_light: #E6E9FF,
+    ai_brand_blue: #1F3A8A,
+    ai_brand_blue_light: #EEF2FF,
+    ai_brand_red: #EF4444,
+    ai_brand_red_light: #FEF2F2,
+    ai_brand_secondary_light: #F8FAFC,
+
+    // My colors
+    ai_white: #FFFFFF,
+    ai_black: #020617,
+    ai_white_off: #F8FAFC,
+    ai_gray: #64748B,
+    ai_gray_bg: #F1F5F9,
+    ai_light_border: #E2E8F0,
+
+    error:red,
+);
+
+$GeistSans: var(--font-geist-sans);
+$GeistMono: var(--font-geist-mono);
+
+$sm: 768px;
+$lg: 1024px;
+$xl: 1441px;
+
+@mixin fourk {
+    @media (min-width: 2200px) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin mini {
+    @media (max-width: 1300px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: #{$lg}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$lg}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (min-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin layout-adjust {
+    @media (min-width: 1250px) {
+        @content;
+    }
+}
+
+@mixin from-tab {
+    @media (min-width: #{$sm}) {
+        @content;
+    }
+}
+
+@mixin till-large {
+    @media (max-width: 1180px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$sm}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 680px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (max-width: 540px) {
+        @content;
+    }
+}
+
+@mixin tiny {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+@function color($color-name) {
+    @return map.get($colors, $color-name);
+}

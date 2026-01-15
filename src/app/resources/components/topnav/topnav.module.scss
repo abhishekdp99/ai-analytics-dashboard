@@ -1,0 +1,176 @@
+@use "../../styles/_mixin.scss" as *;
+
+.ai_topnav {
+    background-color: color(ai_black);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: calc(100% - 260px);
+    transition: width 0.3s ease;
+
+    @include tab {
+        width: 100%;
+        left: 0;
+    }
+
+    &_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 75px;
+        padding: 0 1.5rem;
+        border-bottom: 1px solid rgba(color(ai_gray), .2);
+
+        @include mobile {
+            padding: 0 1rem;
+        }
+
+        .ai_topnav_left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .ai_menu_btn {
+                display: none;
+                background: none;
+                padding: 0;
+                
+                @include tab {
+                    display: flex;
+                    svg {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        fill: color(ai_white);
+                    }
+                }
+            }
+
+            .ai_greeting {
+                font-size: 1.15rem;
+                font-weight: 600;
+                color: color(ai_white);
+    
+                .hide_mobile {
+                    
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .ai_topnav_right {
+            display: flex;
+            align-items: center;
+
+            .ai_search {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                padding: .5rem 1rem;
+                border-radius: .65rem;
+                width: 280px; // Slightly smaller for better fit
+                border: 2px solid rgba(color(ai_brand_primary), .25);
+                background-color: rgba(color(ai_brand_primary), .1);
+                margin-right: .75rem;
+
+                /* Hide search on tablet, it's usually moved to a separate icon or menu */
+                @include tab {
+                    display: none;
+                }
+
+                input {
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    width: 100%;
+                    font-size: 14px;
+                    color: color(ai_white);
+                }
+                svg {
+                    width: .9rem;
+                    height: .9rem;
+                    fill: color(ai_gray);
+                }
+            }
+
+            .ai_icon_btn {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: .5rem;
+                background-color: rgba(color(ai_brand_primary), .1);
+                border: 1px solid rgba(color(ai_brand_primary), .25);
+                margin-right: 1rem;
+
+                @include mobile {
+                    margin-right: 0.5rem;
+                }
+
+                svg {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    fill: color(ai_white);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 8px;
+                    right: 12px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: color(error);
+                }
+            }
+
+            .ai_user {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                cursor: pointer;
+
+                &_profile {
+                    position: relative;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    flex-shrink: 0;
+                }
+
+                &_info {
+                    display: flex;
+                    flex-direction: column;
+                    color: color(ai_white);
+
+                    @include mobile {
+                        display: none; // Hide name/email on small mobile
+                    }
+
+                    .ai_name {
+                        font-size: 0.75rem;
+                        font-weight: 500;
+                    }
+
+                    .ai_email {
+                        font-size: 0.6rem;
+                        color: rgba(color(ai_white), .75);
+                    }
+                }
+
+                .ai_angle_icon {
+                    width: 1rem;
+                    height: 1rem;
+                    fill: color(ai_white);
+                    @include mobile { display: none; }
+                }
+            }
+        }
+    }
+}
